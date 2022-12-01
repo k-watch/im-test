@@ -21,7 +21,7 @@ export default async function handler(
 
   try {
     const { data } = await httpInstance.post<IAuth>(
-      `${process.env.NEXT_PUBLIC_API_URL}/login`,
+      `https://k-dnc.vercel.app/login`,
       {
         email,
         password,
