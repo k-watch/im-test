@@ -13,7 +13,7 @@ interface ReqUpdateUser {
 export const reqGetUser = async (id: string) => {
   const token = cookieInstance.get('token');
 
-  const { data } = await httpInstance.get<IUser[]>('/api/users', {
+  const { data } = await httpInstance.get<IUser[]>('/users', {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -28,7 +28,7 @@ export const reqGetUser = async (id: string) => {
 export const reqGetUserAccountList = async (id: string) => {
   const token = cookieInstance.get('token');
 
-  const { data } = await httpInstance.get<IAccount[]>('/api/accounts', {
+  const { data } = await httpInstance.get<IAccount[]>('/accounts', {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -43,7 +43,7 @@ export const reqGetUserAccountList = async (id: string) => {
 export const reqUpdateUser = async ({ id, params }: ReqUpdateUser) => {
   const token = cookieInstance.get('token');
 
-  const { data } = await httpInstance.patch(`/api/users/${id}`, params, {
+  const { data } = await httpInstance.patch(`/users/${id}`, params, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -55,7 +55,7 @@ export const reqUpdateUser = async ({ id, params }: ReqUpdateUser) => {
 export const reqDeleteUser = async (id: number) => {
   const token = cookieInstance.get('token');
 
-  const { data } = await httpInstance.delete(`/api/users/${id}`, {
+  const { data } = await httpInstance.delete(`/users/${id}`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },

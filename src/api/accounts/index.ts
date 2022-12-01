@@ -10,7 +10,7 @@ export const reqGetAccountList = async (queries: QueriesParmas) => {
   const token = cookieInstance.get('token');
 
   const { headers, data } = await httpInstance.get<IAccount[]>(
-    '/api/accounts',
+    '/accounts',
     {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -35,7 +35,7 @@ export const reqGetAccountList = async (queries: QueriesParmas) => {
 export const reqGetUsers = async () => {
   const token = cookieInstance.get('token');
 
-  const { headers, data } = await httpInstance.get<IUser[]>('/api/users', {
+  const { headers, data } = await httpInstance.get<IUser[]>('/users', {
     headers: {
       Authorization: `Bearer ${token}`,
     },
