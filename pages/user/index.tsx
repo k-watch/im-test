@@ -33,7 +33,7 @@ export const getServerSideProps = async (
     queryClient.prefetchQuery(['user', id], async () => {
       try {
         const { data } = await httpInstance.get<IUser[]>(
-          `https://december-and-company.herokuapp.com/users`,
+          `https://k-dnc.vercel.app/users`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -62,7 +62,7 @@ export const getServerSideProps = async (
     queryClient.prefetchQuery(['user', 'accounts', id], async () => {
       try {
         const { data } = await httpInstance.get<IAccount[]>(
-          `https://december-and-company.herokuapp.com/accounts`,
+          `https://k-dnc.vercel.app/accounts`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
