@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const httpInstance = axios.create({
-  baseURL: 'https://december-and-company.herokuapp.com',
+  baseURL: 'https://k-dnc.vercel.app',
 });
 
 export default httpInstance;
