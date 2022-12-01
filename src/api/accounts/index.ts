@@ -9,8 +9,7 @@ import httpInstance from '../httpInstance';
 export const reqGetAccountList = async (queries: QueriesParmas) => {
   const token = cookieInstance.get('token');
 
-  const { headers, data } = await httpInstance.get<IAccount[]>(
-    '/accounts',
+  const { headers, data } = await httpInstance.get<IAccount[]>('/accounts',
     {
       headers: {
         Authorization: `Bearer ${token}`,
