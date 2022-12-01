@@ -6,7 +6,7 @@ const nextConfig = {
     return [
       {
         source: '/api/:path*',
-        destination: `https://k-dnc.vercel.app/:path*`,
+        destination: `https://december-and-company.herokuapp.com/:path*`,
       },
     ];
   },
