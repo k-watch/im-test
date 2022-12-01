@@ -1,4 +1,3 @@
-
 import { IAccount } from '@src/models/IAccount';
 import { IUser } from '@src/models/IUser';
 import { QueriesParmas } from '@src/types';
