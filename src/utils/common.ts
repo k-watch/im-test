@@ -15,7 +15,7 @@ export const queryParams = (
   value: string,
   options?: TransitionOptions
 ) => {
-  // query string 가져옴 /xxx?query=11
+  // query string 가져옴 /xxx?query=1
   const path = router.asPath.split('?')[1];
   const searchParams = new URLSearchParams(path);
 
