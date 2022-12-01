@@ -33,7 +33,7 @@ export const getServerSideProps = async (
     queryClient.prefetchQuery(['user', id], async () => {
       try {
         const { data } = await httpInstance.get<IUser[]>(
-          `${process.env.NEXT_PUBLIC_API_URL}/users`,
+          `https://k-dnc.vercel.app/users`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -62,7 +62,7 @@ export const getServerSideProps = async (
     queryClient.prefetchQuery(['user', 'accounts', id], async () => {
       try {
         const { data } = await httpInstance.get<IAccount[]>(
-          `${process.env.NEXT_PUBLIC_API_URL}/accounts`,
+          `https://k-dnc.vercel.app/accounts`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
