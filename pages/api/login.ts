@@ -21,7 +21,7 @@ export default async function handler(
 
   try {
     const { data } = await httpInstance.post<IAuth>(
-      `https://k-dnc.vercel.app/login`,
+      `https://december-and-company.herokuapp.com/login`,
       {
         email,
         password,

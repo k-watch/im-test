@@ -41,7 +41,7 @@ export const getServerSideProps = async (
     queryClient.prefetchQuery(['accounts'], async () => {
       try {
         const { headers, data } = await httpInstance.get<IUser[]>(
-          `https://k-dnc.vercel.app/users`,
+          `https://december-and-company.herokuapp.com/users`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
