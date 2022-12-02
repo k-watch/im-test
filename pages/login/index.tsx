@@ -17,3 +17,7 @@ const LoginPage = () => {
 LoginPage.getLayout = (page: ReactElement) => page;
 
 export default LoginPage;
+
+export const getServerSideProps = async () => {
+  return { props: {} };
+};
