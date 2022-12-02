@@ -9,10 +9,7 @@ import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import { AccountBalance, Person } from '@mui/icons-material';
-import LogoutIcon from '@mui/icons-material/Logout';
 import { styled } from '@mui/material';
 import { blueGrey, grey } from '@mui/material/colors';
 
@@ -24,13 +21,11 @@ const DRAWER_WIDTH = 240;
 const menus = [
   {
     id: '1',
-    icon: <AccountBalance />,
     text: '계좌 목록',
     href: NAVIGATE_URL.ACCOUNT,
   },
   {
     id: '2',
-    icon: <Person />,
     text: '사용자 목록',
     href: NAVIGATE_URL.USERS,
   },
@@ -83,14 +78,13 @@ const Layout = ({ children }: { children: ReactNode }) => {
         <S.Logo>PREFACE</S.Logo>
         <Divider />
         <List>
-          {menus.map(({ id, text, icon, href }) => (
+          {menus.map(({ id, text, href }) => (
             <Link href={href} key={id}>
               <ListItem disablePadding>
                 <S.ListItemButton
                   onClick={() => setTitle(text)}
                   selected={router.pathname === href}
                 >
-                  <ListItemIcon>{icon}</ListItemIcon>
                   <S.ListItemText primary={text} />
                 </S.ListItemButton>
               </ListItem>
@@ -98,9 +92,6 @@ const Layout = ({ children }: { children: ReactNode }) => {
           ))}
           <ListItem disablePadding>
             <S.ListItemButton onClick={() => handleLogout()}>
-              <ListItemIcon>
-                <LogoutIcon />
-              </ListItemIcon>
               <S.ListItemText primary="로그아웃" />
             </S.ListItemButton>
           </ListItem>

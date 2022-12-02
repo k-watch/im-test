@@ -3,8 +3,6 @@ import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
-import IconButton from '@mui/material/IconButton';
-import CloseIcon from '@mui/icons-material/Close';
 import { styled } from '@mui/material/styles';
 import { grey } from '@mui/material/colors';
 
@@ -17,25 +15,9 @@ export interface DialogTitleProps {
 }
 
 function UserDialogTitle(props: DialogTitleProps) {
-  const { children, onClose } = props;
+  const { children } = props;
 
-  return (
-    <DialogTitle sx={{ m: 0, p: 2 }}>
-      {children}
-      {onClose ? (
-        <IconButton
-          onClick={onClose}
-          sx={{
-            position: 'absolute',
-            right: 8,
-            top: 11,
-          }}
-        >
-          <CloseIcon />
-        </IconButton>
-      ) : null}
-    </DialogTitle>
-  );
+  return <DialogTitle sx={{ m: 0, p: 2 }}>{children}</DialogTitle>;
 }
 
 const UserDialog = ({ user }: { user: UserDialogProps }) => {

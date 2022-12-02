@@ -33,10 +33,13 @@ const useAccountList = () => {
 
   const dispatch = useDispatch();
 
+  const [enabled, setEnabled] = useState(false);
   const [list, setList] = useState<AccountsTableProps[]>([]);
 
   const queries: QueriesParmas = useMemo(() => {
-    if (router.query) {
+    if (Object.keys(router.query).length !== 0) {
+      console.log(enabled, router.query);
+      setEnabled(true);
       return {
         page: router.query.page ? Number(router.query.page) : 1,
         broker: getMapValue(brokerMap, router.query.broker),
@@ -55,7 +58,13 @@ const useAccountList = () => {
     };
   }, [router.query]);
 
-  const { resAccounts, resUsers } = useAccountsQuery(queries);
+  useEffect(() => {
+    if (Object.keys(router.query).length !== 0) {
+      console.log('asfd', router.query);
+    }
+  }, [router.query]);
+
+  const { resAccounts, resUsers } = useAccountsQuery(queries, enabled);
 
   useEffect(() => {
     if (resAccounts.data && resUsers.data) {

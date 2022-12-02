@@ -1,15 +1,11 @@
 import {
   Button,
   CircularProgress,
-  InputAdornment,
   Dialog,
   styled,
   TextField,
 } from '@mui/material';
 import { blueGrey, grey } from '@mui/material/colors';
-import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
-import LockOpenIcon from '@mui/icons-material/LockOpen';
-import InputIcon from '@mui/icons-material/Input';
 
 import useLogin from './hooks/useLogin';
 
@@ -28,7 +24,6 @@ const Login = () => {
           <h1 className="header">PREFACE</h1>
           <form onSubmit={handleSubmit}>
             <S.Title>
-              <PersonOutlineIcon />
               <p>로그인</p>
             </S.Title>
             <S.InputWrap>
@@ -38,13 +33,6 @@ const Login = () => {
                 fullWidth
                 margin="normal"
                 placeholder="아이디를 입력하세요."
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <PersonOutlineIcon />
-                    </InputAdornment>
-                  ),
-                }}
               />
               <TextField
                 inputRef={passwordRef}
@@ -53,20 +41,12 @@ const Login = () => {
                 fullWidth
                 margin="normal"
                 placeholder="비밀번호를 입력하세요."
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <LockOpenIcon />
-                    </InputAdornment>
-                  ),
-                }}
               />
               <Button
                 type="submit"
                 variant="contained"
                 disableElevation
                 fullWidth
-                startIcon={<InputIcon />}
               >
                 로그인
               </Button>
