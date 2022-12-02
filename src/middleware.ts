@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 
 export const middleware = (request: NextRequest) => {
   const pathName = request.nextUrl.pathname;
-  const isAuthenticated = request.cookies.get('token')?.value;
+  const isAuthenticated = request.cookies.get('token');
 
   // 로그인 여부를 체크
   if (isAuthenticated && isAuthenticated !== 'expired') {
@@ -21,5 +21,5 @@ export const middleware = (request: NextRequest) => {
   return NextResponse.next();
 };
 export const config = {
-  matcher: ['/((?!api|server|_next/static|favicon.ico|mockServiceWorker).*)'],
+  matcher: ['/admin/:path*'],
 };
